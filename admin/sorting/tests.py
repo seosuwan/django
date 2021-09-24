@@ -1,8 +1,9 @@
 from django.test import TestCase
 import unittest
+import sys
+sys.path.append('/admin/sorting')
 
-
-from models import MySum
+from models import MySum, Palindrome
 
 
 class TestMySum(unittest.TestCase):
@@ -14,6 +15,13 @@ class TestMySum(unittest.TestCase):
         res = instance.one_to_ten_sum2()
         print(f'My Expected Value is {res}')
         self.assertEqual(res, 55)
+
+    def test_palindrome(self):
+        instance = Palindrome()
+        #instance.str_to_list("A man, a plan, a canal: Panama")
+        #print(str_arr)
+        self.assertEqual(instance.isPalindrome(instance.str_to_list("A man, a plan, a canal: Panama"))["Result"], True)
+
 
 
 if __name__ == '__main__':

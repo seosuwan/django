@@ -3,32 +3,29 @@
 from dataclasses import dataclass
 
 
-class Sorting(object):
-
-    def bubble_sort(self):
-        pass
-
-    def merge_sort(self):
-        pass
-
-    def quick_sort(self):
-        pass
-
-
 @dataclass
 class Palindrome(object):
-    input_string: str
+    # input_string: str
 
-    def str_to_list(payload: str) -> []:
-        return [i for i in payload if i.isalnum()]
+    def str_to_list(self, payload: str) -> []:
+        return [char.lower() for char in payload if char.isalnum()]
 
-    def is_palindrome(ls : []) -> bool:
-        return {"RESULT": False for i in ls if ls.pop(0) != ls.pop()}
+    def isPalindrome(self, ls: []) -> bool:
+        # while len(ls) > 1:
+            # if ls.pop(0) != ls.pop():
+            #     return False
+        return {"Result":True for i in ls if ls.pop(0) != ls.pop}
+'''
+    def reverse_string(self) -> str:
+        strs = []
+        for char in self._input_string:
+            if char.isalnum():
+                strs.append(char.lower())
+        strs = strs[::-1]
+        str = "".join(strs)
 
-    def reverse_string(self):
-        return
-
-
+        return str
+'''
 @dataclass
 class MySum(object):
 
